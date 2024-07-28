@@ -1,0 +1,4 @@
+name: CrowdControlled
+version: '${project.version}'
+main: net.craftsupport.crowdcontrolled.CrowdControlled
+api-version: '1.21'
