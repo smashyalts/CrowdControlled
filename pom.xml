@@ -67,5 +67,10 @@
             <version>1.21-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+				<dependency>
+				    <groupId>com.github.twitch4j</groupId>
+				    <artifactId>twitch4j</artifactId>
+				    <version>1.21.0</version>
+				</dependency>
     </dependencies>
 </project>
