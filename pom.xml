@@ -58,6 +58,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+				<repository>
+				    <id>jitpack.io</id>
+				    <url>https://jitpack.io</url>
+			  </repository>
     </repositories>
 
     <dependencies>
@@ -67,10 +71,17 @@
             <version>1.21-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
 				<dependency>
 				    <groupId>com.github.twitch4j</groupId>
 				    <artifactId>twitch4j</artifactId>
 				    <version>1.21.0</version>
+				</dependency>
+
+			  <dependency>
+				    <groupId>com.github.MistyKnives</groupId>
+				    <artifactId>Kick4J</artifactId>
+				    <version>1.0</version>
 				</dependency>
     </dependencies>
 </project>
