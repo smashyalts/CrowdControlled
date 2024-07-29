@@ -7,7 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class testEvent implements Listener {
+public class TestEvent implements Listener {
 
    // Testing Attributes until we get subscriber/superchat events up and running
     @EventHandler
