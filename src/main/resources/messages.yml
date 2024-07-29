@@ -1,0 +1,19 @@
+#   __  __
+# |  \/  |
+# | \  / | ___  ___ ___  __ _  __ _  ___  ___
+# | |\/| |/ _ \/ __/ __|/ _` |/ _` |/ _ \/ __|
+# | |  | |  __/\__ \__ \ (_| | (_| |  __/\__ \
+# |_|  |_|\___||___/___/\__,_|\__, |\___||___/
+#                              __/ |
+#                             |___/
+
+# This is the configuration for messages.
+# TODO color wiki link
+
+SERVER_NAME: "&c[CrowdControlled]&r" # Name of the server / whatever you want. You can use this as a %server_name% placeholder in any of the messages below.
+PERMISSION_DENY: "%server_name% &7You do not have the sufficient permissions to execute this command."
+RELOADING: "%server_name% &eReloading the plugin, please wait..."
+RELOADED: "%server_name% &aPlugin reloaded!"
+ERROR: "%server_name% &eAn unexpected error occurred. &7%debug%" # Placeholders: %debug% - Debug message for use in TODO WIKI LINK
+INCORRECT_USAGE: "%server_name% &eIncorrect usage! Usage: &a%usage%" # Placeholders: %usage% - Correct usage of command.
+COMMAND_PLAYER_ONLY: "You must be a player to execute this command."
