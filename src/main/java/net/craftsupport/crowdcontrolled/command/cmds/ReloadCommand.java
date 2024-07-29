@@ -34,6 +34,6 @@ public class ReloadCommand extends Command {
 
     @Override
     public boolean allowConsole() {
-        return false;
+        return true;
     }
 }
