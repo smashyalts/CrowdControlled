@@ -58,10 +58,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
-				<repository>
-				    <id>jitpack.io</id>
-				    <url>https://jitpack.io</url>
-			  </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -72,16 +72,31 @@
             <scope>provided</scope>
         </dependency>
 
-				<dependency>
-				    <groupId>com.github.twitch4j</groupId>
-				    <artifactId>twitch4j</artifactId>
-				    <version>1.21.0</version>
-				</dependency>
+        <dependency>
+            <groupId>com.github.twitch4j</groupId>
+            <artifactId>twitch4j</artifactId>
+            <version>1.21.0</version>
+        </dependency>
 
-			  <dependency>
-				    <groupId>com.github.MistyKnives</groupId>
-				    <artifactId>Kick4J</artifactId>
-				    <version>1.0</version>
-				</dependency>
+        <dependency>
+            <groupId>com.github.MistyKnives</groupId>
+            <artifactId>Kick4J</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <!-- Provided by Minecraft. Keep in sync. -->
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.19.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>
