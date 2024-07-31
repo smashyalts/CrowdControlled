@@ -15,7 +15,8 @@ public class ConfigFileHandler {
         registerFile(ConfigTypes.MESSAGES, new ConfigHandler(plugin, "messages"));
 
         configs.values().forEach(ConfigHandler::saveDefaultConfig);
-
+        Messages.setConfig(getFile(ConfigTypes.MESSAGES).getConfig());
+        Settings.setConfig(getFile(ConfigTypes.SETTINGS).getConfig());
     }
 
     public ConfigHandler getFile(ConfigTypes type) { return configs.get(type); }

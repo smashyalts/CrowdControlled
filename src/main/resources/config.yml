@@ -1,0 +1,44 @@
+#    _____             __ _
+#  / ____|           / _(_)
+# | |     ___  _ __ | |_ _  __ _
+# | |    / _ \| '_ \|  _| |/ _` |
+# | |___| (_) | | | | | | | (_| |
+#  \_____\___/|_| |_|_| |_|\__, |
+#                           __/ |
+#                          |___/
+
+# This is the general config, where you can set up platforms and whatnot.
+
+PLATFORM:
+
+  # Platform configuration for Twitch.
+  TWITCH:
+    # This is the OAuth token for the Twitch platform, so this plugin can monitor events.
+    OAUTH_TOKEN: "YOUR_AUTH_TOKEN"
+
+    # This plugin supports multiple streamers streaming on multiple platforms.
+    # YOUR_CHANNEL_ID: The ID of your channel (see https://www.streamweasels.com/tools/convert-twitch-username-to-user-id/).
+    # YOUR_IGN: Your in game Minecraft username.
+    CHANNELS:
+      - ["YOUR_CHANNEL_ID", "YOUR_IGN"]
+
+  # Platform configuration for Kick.
+  KICK:
+
+    # Kick Integration requires you to create a new normal Kick account.
+    # You should input the login credentials here.
+    # These should not be your own credentials! It should be a new account!
+    USERNAME: "KICK_USERNAME"
+    PASSWORD: "KICK_PASSWORD"
+
+    # This plugin supports multiple streamers streaming on multiple platforms.
+    # YOUR_CHANNEL_USERNAME: Username of your Kick Channel.
+    # YOUR_IGN: Your in game Minecraft username.
+    CHANNELS:
+      ["YOUR_CHANNEL_USERNAME", "YOUR_IGN"]
+
+  YOUTUBE:
+
+
+
+
