@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [ 17, 21 ]
+        java: [ 21 ]
 
     steps:
       - name: Git checkout
@@ -32,7 +32,7 @@ jobs:
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
-        if: matrix.java == 17
+        if: matrix.java == 21
         with:
           name: ${{ env.artifact_name }}
           path: |

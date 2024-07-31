@@ -39,4 +39,4 @@ Events:
       amplifier: 1 # What is the amplifier on the effect?
 
       block: "AIR" # If the action is set to 'modify_block', what should the changed block be?
-      offset: [ ]
+      offset: [1, -1, 0] # X, Y and Z offset of what block should be modified, or if set to 'teleport', what offset.
