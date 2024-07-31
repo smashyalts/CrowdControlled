@@ -5,9 +5,11 @@ import com.github.twitch4j.pubsub.ITwitchPubSub;
 import lombok.extern.log4j.Log4j2;
 import net.craftsupport.crowdcontrolled.command.CommandHandler;
 import net.craftsupport.crowdcontrolled.command.CommandTabCompleter;
-import net.craftsupport.crowdcontrolled.events.TestEvent;
+import net.craftsupport.crowdcontrolled.event.EventHandler;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Objects;
 
 @Log4j2(topic = "CrowdControlled")
 public final class CrowdControlled extends JavaPlugin {
@@ -15,7 +17,7 @@ public final class CrowdControlled extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        pm.registerEvents(new TestEvent(), this);
+//        pm.registerEvents(new EventHandler(), this);
 
         LOGGER.info("Registering Commands.");
         getCommand("chatcontrolled").setExecutor(new CommandHandler());
