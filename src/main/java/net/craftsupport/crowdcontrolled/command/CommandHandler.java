@@ -1,5 +1,6 @@
 package net.craftsupport.crowdcontrolled.command;
 
+import net.craftsupport.crowdcontrolled.command.cmds.DebugCommand;
 import net.craftsupport.crowdcontrolled.command.cmds.ReloadCommand;
 import net.craftsupport.crowdcontrolled.config.Messages;
 import org.bukkit.command.CommandExecutor;
@@ -15,6 +16,7 @@ public class CommandHandler implements CommandExecutor {
 
     public CommandHandler() {
         subcommands.add(new ReloadCommand());
+        subcommands.add(new DebugCommand());
     }
 
 

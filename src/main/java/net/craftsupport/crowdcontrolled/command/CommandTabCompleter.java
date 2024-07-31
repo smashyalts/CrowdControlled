@@ -25,6 +25,8 @@ public class CommandTabCompleter implements TabCompleter {
 
             if (sender.hasPermission("chatcontrolled.command.reload")) {
                 completions.add("reload");
+            } else if (sender.hasPermission("chatcontrolled.command.debug")) {
+                completions.add("debug");
             }
 
             return StringUtil.copyPartialMatches(arg, completions, new ArrayList<>(completions.size()));
