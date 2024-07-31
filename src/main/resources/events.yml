@@ -33,10 +33,3 @@ Events:
 
       commands: # If the action is set to 'command', what will the commands be? Supports multiple commands (in order)!
         - "tp %streamer_ign% ~ 100 ~"
-
-      effect: "SLOWNESS" # If the action is set to 'give_effect', what should the effect be?
-      duration: 10 # How long should the effect last for in seconds?
-      amplifier: 1 # What is the amplifier on the effect?
-
-      block: "AIR" # If the action is set to 'modify_block', what should the changed block be?
-      offset: []

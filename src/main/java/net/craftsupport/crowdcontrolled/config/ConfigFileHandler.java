@@ -13,6 +13,7 @@ public class ConfigFileHandler {
     public void loadFiles(CrowdControlled plugin) {
         registerFile(ConfigTypes.SETTINGS, new ConfigHandler(plugin, "config"));
         registerFile(ConfigTypes.MESSAGES, new ConfigHandler(plugin, "messages"));
+        registerFile(ConfigTypes.EVENTS, new ConfigHandler(plugin, "events"));
 
         configs.values().forEach(ConfigHandler::saveDefaultConfig);
         Messages.setConfig(getFile(ConfigTypes.MESSAGES).getConfig());
