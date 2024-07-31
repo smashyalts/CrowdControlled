@@ -5,7 +5,6 @@ import net.craftsupport.crowdcontrolled.command.PermissionsHandler;
 import net.craftsupport.crowdcontrolled.config.Messages;
 import net.craftsupport.crowdcontrolled.util.ColorAPI;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 import java.awt.*;
 
@@ -29,9 +28,12 @@ public class DebugCommand extends Command {
     public void execute(CommandSender sender, String[] args) {
         if (!PermissionsHandler.hasPerm(sender, permission(), true)) return;
 
-        switch (args[0].toString()) {
+        switch (args[0]) {
             case "testcolors": // just as an example, other commands will be added once new features are going to get tested
                 sender.sendMessage(Messages.SERVER_NAME.get() + ColorAPI.color(" This function tests out the color parsing of the plugin.", Color.PINK, Color.BLUE));
+
+            case "other_case":
+                sender.sendMessage(Messages.SERVER_NAME.get() + ColorAPI.color(" This is another switch case.", Color.PINK, Color.BLUE));
         }
     }
 

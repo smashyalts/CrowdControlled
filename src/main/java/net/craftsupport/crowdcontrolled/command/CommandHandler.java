@@ -24,10 +24,10 @@ public class CommandHandler implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull org.bukkit.command.Command command, @NotNull String s, @NotNull String[] strings) {
 
         if (strings.length > 0) {
-            for (int i = 0; i < subcommands.size(); i++) {
-                if (strings[0].equals(subcommands.get(i).getName())) {
-                    if (!strings[0].equals(subcommands.get(i).allowConsole()) && commandSender instanceof Player) {
-                        subcommands.get(i).execute(commandSender, strings);
+            for (Command subcommand : subcommands) {
+                if (strings[0].equals(subcommand.getName())) {
+                    if (!strings[0].equals(subcommand.allowConsole()) && commandSender instanceof Player) {
+                        subcommand.execute(commandSender, strings);
                     } else {
                         Messages.COMMAND_PLAYER_ONLY.send(commandSender);
                     }
