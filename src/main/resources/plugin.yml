@@ -2,3 +2,11 @@ name: CrowdControlled
 version: '${project.version}'
 main: net.craftsupport.crowdcontrolled.CrowdControlled
 api-version: '1.21'
+commands:
+  debug:
+    description: Executes a specific function of the plugin to test its functionality.
+    permission: crowdcontrolled.command.debug
+
+  reload:
+    description: Reloads the plugin's configs.
+    permission: crowdcontrolled.command.reload

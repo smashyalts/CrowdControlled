@@ -29,7 +29,7 @@ public class ReloadCommand extends Command {
 
     @Override
     public String permission() {
-        return "chatcontrolled.command.reload";
+        return "crowdcontrolled.command.reload";
     }
 
     @Override

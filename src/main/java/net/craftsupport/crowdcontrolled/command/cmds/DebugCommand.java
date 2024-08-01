@@ -2,6 +2,8 @@ package net.craftsupport.crowdcontrolled.command.cmds;
 
 import net.craftsupport.crowdcontrolled.command.Command;
 import net.craftsupport.crowdcontrolled.command.PermissionsHandler;
+import net.craftsupport.crowdcontrolled.config.ConfigFileHandler;
+import net.craftsupport.crowdcontrolled.config.ConfigTypes;
 import net.craftsupport.crowdcontrolled.config.Messages;
 import net.craftsupport.crowdcontrolled.util.ColorAPI;
 import org.bukkit.command.CommandSender;
@@ -34,12 +36,15 @@ public class DebugCommand extends Command {
 
             case "other_case":
                 sender.sendMessage(Messages.SERVER_NAME.get() + ColorAPI.color(" This is another switch case.", Color.PINK, Color.BLUE));
+
+            case "getEventConfig":
+                sender.sendMessage(ConfigFileHandler.getFile(ConfigTypes.EVENTS).getConfig().saveToString());
         }
     }
 
     @Override
     public String permission() {
-        return "chatcontrolled.command.debug";
+        return "crowdcontrolled.command.debug";
     }
 
     @Override

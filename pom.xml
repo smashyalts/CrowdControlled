@@ -6,7 +6,7 @@
 
     <groupId>net.craftsupport</groupId>
     <artifactId>CrowdControlled</artifactId>
-    <version>3.9</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>CrowdControlled</name>

@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class ConfigFileHandler {
 
-    private Map<ConfigTypes, ConfigHandler> configs;
+    private static Map<ConfigTypes, ConfigHandler> configs;
     public ConfigFileHandler() { configs = new HashMap<>(); }
 
     public void loadFiles(CrowdControlled plugin) {
@@ -20,7 +20,7 @@ public class ConfigFileHandler {
         Settings.setConfig(getFile(ConfigTypes.SETTINGS).getConfig());
     }
 
-    public ConfigHandler getFile(ConfigTypes type) { return configs.get(type); }
+    public static ConfigHandler getFile(ConfigTypes type) { return configs.get(type); }
 
     public void reloadFiles() {
         configs.values().forEach(ConfigHandler::reload);
