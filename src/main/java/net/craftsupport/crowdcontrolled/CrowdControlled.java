@@ -10,7 +10,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @Log4j2(topic = "CrowdControlled")
-public final class CrowdControlled extends JavaPlugin {
+public class CrowdControlled extends JavaPlugin {
     PluginManager pm = getServer().getPluginManager();
     public static JavaPlugin plugin = CrowdControlled.getPlugin(CrowdControlled.class);
 
