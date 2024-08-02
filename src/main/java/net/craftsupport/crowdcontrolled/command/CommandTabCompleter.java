@@ -17,15 +17,15 @@ public class CommandTabCompleter implements TabCompleter {
     @Nullable
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
-        if (!(sender instanceof Player) || args.length == 0 || !sender.hasPermission("chatcontrolled.island.help")) return null;
+        if (!(sender instanceof Player) || args.length == 0 || !sender.hasPermission("crowdcontrolled.island.help")) return null;
 
         if (args.length == 1) {
             String arg = args[0].toLowerCase(Locale.ROOT);
             List<String> completions = new ArrayList<>();
 
-            if (sender.hasPermission("chatcontrolled.command.reload")) {
+            if (sender.hasPermission("crowdcontrolled.command.reload")) {
                 completions.add("reload");
-            } else if (sender.hasPermission("chatcontrolled.command.debug")) {
+            } else if (sender.hasPermission("crowdcontrolled.command.debug")) {
                 completions.add("debug");
             }
 
