@@ -1,4 +1,4 @@
-package net.craftsupport.crowdcontrolled.command;
+package net.craftsupport.crowdcontrolled.command.subcmds;
 
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.arguments.StringArgument;
@@ -12,8 +12,8 @@ import java.awt.*;
 
 public class DebugCommand {
 
-    public static void register(JavaPlugin plugin) {
-        new CommandAPICommand("crowdcontrolled debug")
+    public static CommandAPICommand get(JavaPlugin plugin) {
+        return new CommandAPICommand("debug")
                 .withAliases("debug")
                 .withArguments(new StringArgument("mode"))
                 .withPermission("crowdcontrolled.command.debug")
@@ -28,7 +28,6 @@ public class DebugCommand {
                                 .executes(((commandSender, commandArguments) -> {
                                     commandSender.sendMessage(ConfigFileHandler.getFile(ConfigTypes.EVENTS).getConfig().saveToString());
                                 }))
-                )
-                .register();
+                );
     }
 }

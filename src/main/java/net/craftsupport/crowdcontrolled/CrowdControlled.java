@@ -3,8 +3,9 @@ package net.craftsupport.crowdcontrolled;
 import dev.jorel.commandapi.CommandAPI;
 import dev.jorel.commandapi.CommandAPIBukkitConfig;
 import lombok.extern.log4j.Log4j2;
-import net.craftsupport.crowdcontrolled.command.DebugCommand;
-import net.craftsupport.crowdcontrolled.command.ReloadCommand;
+import net.craftsupport.crowdcontrolled.command.CrowdcontrolledCommand;
+import net.craftsupport.crowdcontrolled.command.subcmds.DebugCommand;
+import net.craftsupport.crowdcontrolled.command.subcmds.ReloadCommand;
 import net.craftsupport.crowdcontrolled.config.ConfigFileHandler;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -23,8 +24,7 @@ public class CrowdControlled extends JavaPlugin {
 
         LOGGER.info("Registering Commands.");
         CommandAPI.onLoad(new CommandAPIBukkitConfig(this).silentLogs(true));
-        DebugCommand.register(this);
-        ReloadCommand.register(this);
+        CrowdcontrolledCommand.register(this);
     }
 
     @Override
