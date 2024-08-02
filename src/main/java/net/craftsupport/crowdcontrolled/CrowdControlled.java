@@ -12,8 +12,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 @Log4j2(topic = "CrowdControlled")
 public class CrowdControlled extends JavaPlugin {
     PluginManager pm = getServer().getPluginManager();
-    public static JavaPlugin plugin = CrowdControlled.getPlugin(CrowdControlled.class);
-
 
     public static ConfigFileHandler configHandler;
 
@@ -24,13 +22,17 @@ public class CrowdControlled extends JavaPlugin {
         configHandler.loadFiles(this);
 
         LOGGER.info("Registering Commands.");
-        CommandAPI.onLoad(new CommandAPIBukkitConfig(plugin).silentLogs(true));
-        DebugCommand.register(plugin);
-        ReloadCommand.register(plugin);
+        CommandAPI.onLoad(new CommandAPIBukkitConfig(this).silentLogs(true));
+        DebugCommand.register(this);
+        ReloadCommand.register(this);
     }
 
     @Override
     public void onDisable() {
 
+    }
+
+    public static CrowdControlled getInstance() {
+        return getPlugin(CrowdControlled.class);
     }
 }
