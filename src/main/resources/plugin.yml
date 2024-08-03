@@ -3,7 +3,6 @@ version: '${project.version}'
 main: net.craftsupport.crowdcontrolled.CrowdControlled
 api-version: '1.21'
 commands:
-
   crowdcontrolled:
     description: The main command to control this plugin.
     usage: /crowdcontrolled
