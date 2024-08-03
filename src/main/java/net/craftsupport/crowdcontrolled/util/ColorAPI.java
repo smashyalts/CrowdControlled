@@ -13,10 +13,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class ColorAPI {
 
-    private static final boolean SUPPORTS_RGB = Data.VERSION >= 16;
+    private static final boolean SUPPORTS_RGB = DataUtil.getVersion() >= 16;
     private static final List<String> SPECIAL_COLORS = Arrays.asList("&l", "&n", "&o", "&k", "&m");
 
     private static final List<MainPattern> PATTERNS = Arrays.asList(new GradientPattern(), new StaticPattern());
@@ -39,17 +40,8 @@ public class ColorAPI {
             .put(new Color(16777045), ChatColor.getByChar('e'))
             .put(new Color(16777215), ChatColor.getByChar('f')).build();
 
-    public static final class Data {
-        private static final int VERSION;
 
-        static {
-            String version = Bukkit.getVersion();
-            Matcher matcher = Pattern.compile("MC: \\d\\.(\\d+").matcher(version);
 
-            if (matcher.find()) VERSION = Integer.parseInt(matcher.group(1));
-            else throw new IllegalArgumentException("Failed to parse server ver from: " + version);
-        }
-    }
 
     public static String process(String string) {
         for (MainPattern pattern : PATTERNS) {
@@ -57,6 +49,10 @@ public class ColorAPI {
         }
 
         return ChatColor.translateAlternateColorCodes('&', string);
+    }
+
+    public static List<String> process(List<String> strings) {
+        return strings.stream().map(ColorAPI::process).collect(Collectors.toList());
     }
 
     public static String color(String string, Color color) {
@@ -119,4 +115,5 @@ public class ColorAPI {
         }
         return COLORS.get(nearestColor);
     }
+
 }
