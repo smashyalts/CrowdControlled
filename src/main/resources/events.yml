@@ -11,32 +11,32 @@
 
 # Placeholders: see TODO WIKI LINK
 Events:
-  EVENT:
-    platform: ["twitch", "youtube", "kick"] # You can specify events to trigger for multiple platforms, if applicable.
-    on: ["sub", "donate"] # See TODO WIKI LINK for the possible triggers
-    broadcast: true
-    action: "modify_attribute" # See TODO WIKI LINK for possible actions
-    values:
-      attribute_type: "size" # If modifying attributes, what attribute should be modified?
-      attribute_modifier: 1 # If modifying attributes, how to modify them (- for decreases!)
-      attribute_modifier_operator: "add" # If modifying attributes, what operator should be used in relation to the modifier? ('add' = +, 'subtract' = -, 'multiply' = *, 'divide' = /)
+  - addSize:
+      platform: ["twitch", "youtube", "kick"] # You can specify events to trigger for multiple platforms, if applicable.
+      on: ["sub", "donate"] # See TODO WIKI LINK for the possible triggers
+      broadcast: true
+      action: "modify_attribute" # See TODO WIKI LINK for possible actions
+      values:
+        attribute_type: "size" # If modifying attributes, what attribute should be modified?
+        attribute_modifier: 1 # If modifying attributes, how to modify them (- for decreases!)
+        attribute_modifier_operator: "add" # If modifying attributes, what operator should be used in relation to the modifier? ('add' = +, 'subtract' = -, 'multiply' = *, 'divide' = /)
 
-      name: "%viewer_name%" # If the action is an item, entity, etc, what should the name be. Supports Color Codes.
-      entity: "BABY_ZOMBIE" # If an entity, what type of entity.
-      invulnerable: false # Should the entitiy be invincible?
+        name: "%viewer_name%" # If the action is an item, entity, etc, what should the name be. Supports Color Codes.
+        entity: "BABY_ZOMBIE" # If an entity, what type of entity.
+        invulnerable: false # Should the entitiy be invincible?
 
-      item: "ROTTEN_FLESH" # If an item, what should the item be?
-      count: 16 # If an item, what should the count be?
-      lore: # If an item, what should the lore be? Supports multiple lines and color codes.
-        - "&a%viewer_name%&e gifted &a%gift_count%"
-        - "&agifts! &eThanks!"
+        item: "ROTTEN_FLESH" # If an item, what should the item be?
+        count: 16 # If an item, what should the count be?
+        lore: # If an item, what should the lore be? Supports multiple lines and color codes.
+          - "&a%viewer_name%&e gifted &a%gift_count%"
+          - "&agifts! &eThanks!"
 
-      commands: # If the action is set to 'command', what will the commands be? Supports multiple commands (in order)!
-        - "tp %streamer_ign% ~ 100 ~"
+        commands: # If the action is set to 'command', what will the commands be? Supports multiple commands (in order)!
+          - "tp %streamer_ign% ~ 100 ~"
 
-      effect: "SLOWNESS" # If the action is set to 'give_effect', what should the effect be?
-      duration: 10 # How long should the effect last for in seconds?
-      amplifier: 1 # What is the amplifier on the effect?
+        effect: "SLOWNESS" # If the action is set to 'give_effect', what should the effect be?
+        duration: 10 # How long should the effect last for in seconds?
+        amplifier: 1 # What is the amplifier on the effect?
 
-      block: "AIR" # If the action is set to 'modify_block', what should the changed block be?
-      offset: [1, -1, 0] # X, Y and Z offset of what block should be modified, or if set to 'teleport', what offset.
+        block: "AIR" # If the action is set to 'modify_block', what should the changed block be?
+        offset: [1, -1, 0] # X, Y and Z offset of what block should be modified, or if set to 'teleport', what offset.

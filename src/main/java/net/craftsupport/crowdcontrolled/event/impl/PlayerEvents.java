@@ -1,15 +1,35 @@
 package net.craftsupport.crowdcontrolled.event.impl;
 
-public class PlayerEvents {
-    public static void giveItem(String type, int count, Object lore) {
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
+import java.util.List;
+
+public class PlayerEvents {
+    public static void giveItem(String type, int count, List<String> lore) {
+        for (Player p : Bukkit.getOnlinePlayers()) {
+            ItemStack item = new ItemStack(Material.getMaterial(type), count);
+            ItemMeta meta = item.getItemMeta();
+
+            meta.setLore(lore);
+
+            p.getInventory().addItem(item);
+        }
     }
 
     public static void executeCommand(String command) {
-
+        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), command);
     }
 
     public static void applyEffect(String type, int duration, int amplifier) {
-
+        for (Player p : Bukkit.getOnlinePlayers()) {
+                p.addPotionEffect(new PotionEffect(PotionEffectType.getByName(type), duration, amplifier));
+        }
     }
 }

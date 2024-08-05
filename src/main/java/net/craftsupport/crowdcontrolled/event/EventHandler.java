@@ -13,22 +13,22 @@ public class EventHandler {
     public static void execute(String type, List<Object> params) {
         switch (type) {
             case "modify_attribute" -> {
-                AttributeEvents.modifyPlayerAttribute((String) params.get(4), (int) params.get(5), (String) params.get(6));
+                AttributeEvents.modifyPlayerAttribute((String) params.get(0), (int) params.get(1), (String) params.get(2));
             }
             case "spawn_entity" -> {
-                EntityEvents.spawnEntity((String) params.get(7), (String) params.get(8), (Boolean) params.get(9));
+                EntityEvents.spawnEntity((String) params.get(3), (String) params.get(4), (Boolean) params.get(5));
             }
             case "give_item" -> {
-                PlayerEvents.giveItem((String) params.get(10), (Integer) params.get(11), params.get(12));
+                PlayerEvents.giveItem((String) params.get(6), (int) params.get(7), (List<String>) params.get(8));
             }
             case "command" -> {
-                PlayerEvents.executeCommand((String) params.get(13));
+                PlayerEvents.executeCommand((String) params.get(9));
             }
             case "apply_effect" -> {
-                PlayerEvents.applyEffect((String) params.get(14), (int) params.get(15), (int) params.get(16));
+                PlayerEvents.applyEffect((String) params.get(10), (int) params.get(11), (int) params.get(12));
             }
             case "modify_block" -> {
-                WorldEvents.modifyBlock((String) params.get(17), (List<Object>) params.get(18));
+                WorldEvents.modifyBlock((String) params.get(13), (List<Integer>) params.get(14));
             }
         }
     }

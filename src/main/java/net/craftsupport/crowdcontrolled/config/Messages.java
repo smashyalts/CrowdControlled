@@ -28,7 +28,7 @@ public enum Messages {
     public String getString() { return config.getString(this.path); }
 
     public String get(Object... replacements) {
-        Object value = config.get("Messages." + this.path);
+        Object value = config.get(this.path);
 
         String message;
         if (value == null) {
@@ -42,7 +42,7 @@ public enum Messages {
     public void send(CommandSender receiver, Object... replacements) {
         if (receiver == null) return;
 
-        Object value = config.get("Messages." + this.path);
+        Object value = config.get(this.path);
 
         String message;
         if (value == null) {
@@ -62,7 +62,7 @@ public enum Messages {
             message = message.replace(String.valueOf(replacements[i]), String.valueOf(replacements[i + 1]));
         }
 
-        String prefix = config.getString("Messages." + SERVER_NAME.getPath());
+        String prefix = config.getString(SERVER_NAME.getPath());
         return message.replace("%server_name%", prefix != null && !prefix.isEmpty() ? prefix : "");
     }
 }
