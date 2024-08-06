@@ -23,8 +23,10 @@ public class PlayerEvents {
         }
     }
 
-    public static void executeCommand(String command) {
-        Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), command);
+    public static void executeCommand(List<String> commands) {
+        for (String cmd : commands) {
+            Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), cmd);
+        }
     }
 
     public static void applyEffect(String type, int duration, int amplifier) {

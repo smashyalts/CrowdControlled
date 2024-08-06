@@ -7,28 +7,29 @@ import net.craftsupport.crowdcontrolled.event.impl.PlayerEvents;
 import net.craftsupport.crowdcontrolled.event.impl.WorldEvents;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class EventHandler {
-    public static void execute(String type, List<Object> params) {
+    public static void execute(String type, LinkedHashMap params) {
         switch (type) {
             case "modify_attribute" -> {
-                AttributeEvents.modifyPlayerAttribute((String) params.get(0), (int) params.get(1), (String) params.get(2));
+                AttributeEvents.modifyPlayerAttribute((String) params.get("attribute_type"), (int) params.get("attribute_modifier"), (String) params.get("attribute_modifier_operator"));
             }
             case "spawn_entity" -> {
-                EntityEvents.spawnEntity((String) params.get(3), (String) params.get(4), (Boolean) params.get(5));
+                EntityEvents.spawnEntity((String) params.get("name"), (String) params.get("entity"), (Boolean) params.get("invulnerable"));
             }
             case "give_item" -> {
-                PlayerEvents.giveItem((String) params.get(6), (int) params.get(7), (List<String>) params.get(8));
+                PlayerEvents.giveItem((String) params.get("item"), (int) params.get("count"), (List<String>) params.get("lore"));
             }
             case "command" -> {
-                PlayerEvents.executeCommand((String) params.get(9));
+                PlayerEvents.executeCommand((List<String>) params.get("commands"));
             }
             case "apply_effect" -> {
-                PlayerEvents.applyEffect((String) params.get(10), (int) params.get(11), (int) params.get(12));
+                PlayerEvents.applyEffect((String) params.get("effect"), (int) params.get("duration"), (int) params.get("amplifier"));
             }
             case "modify_block" -> {
-                WorldEvents.modifyBlock((String) params.get(13), (List<Integer>) params.get(14));
+                WorldEvents.modifyBlock((String) params.get("block"), (List<Integer>) params.get("offset"));
             }
         }
     }
