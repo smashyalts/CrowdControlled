@@ -58,10 +58,6 @@ public class EventHandler {
         for (int i = 0; i < config.size(); i++) {
             LinkedHashMap map = (LinkedHashMap) ((LinkedHashMap) config.get(i)).get(i + 1);
 
-            for (Player p : Bukkit.getOnlinePlayers()) {
-                p.sendMessage(map.toString());
-            }
-
             List<String> plt = (List<String>) map.get("platform");
             List<String> trigger = (List<String>) map.get("event");
             String evtType = (String) map.get("action");
