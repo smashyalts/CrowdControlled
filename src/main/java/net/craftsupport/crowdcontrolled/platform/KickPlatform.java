@@ -3,6 +3,7 @@ package net.craftsupport.crowdcontrolled.platform;
 import net.craftsupport.crowdcontrolled.config.Settings;
 import uk.co.mistyknives.kick4j.Kick4J;
 import uk.co.mistyknives.kick4j.Kick4JBuilder;
+import uk.co.mistyknives.kick4j.api.channels.payload.Channel;
 import uk.co.mistyknives.kick4j.auth.AuthCredential;
 import uk.co.mistyknives.kick4j.events.EventType;
 import uk.co.mistyknives.kick4j.events.impl.channel.ChannelFollowEvent;
@@ -10,7 +11,6 @@ import uk.co.mistyknives.kick4j.events.impl.channel.ChannelGiftedSubscriptionsEv
 import uk.co.mistyknives.kick4j.events.impl.channel.ChannelSubscriptionEvent;
 import uk.co.mistyknives.kick4j.events.impl.channel.ChannelWasRaidedEvent;
 import uk.co.mistyknives.kick4j.util.Logger;
-import uk.co.mistyknives.kick4j.api.channels.payload.Channel;
 
 public class KickPlatform {
 

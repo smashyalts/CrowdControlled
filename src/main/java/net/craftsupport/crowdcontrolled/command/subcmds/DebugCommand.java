@@ -44,9 +44,10 @@ public class DebugCommand {
                 )
                 .withSubcommand(
                         new CommandAPICommand("testEvent")
-                                .withArguments(new StringArgument("type"))
+//                                .withArguments(new StringArgument("type"))
                                 .executes(((commandSender, commandArguments) -> {
-                                    EventHandler.execute(commandArguments.get("type").toString(), (LinkedHashMap) ((LinkedHashMap) ((LinkedHashMap) ((ArrayList<Object>) ConfigFileHandler.getFile(ConfigTypes.EVENTS).getConfig().get("Events")).get(0)).get("addSize")).get("values") );
+//                                    EventHandler.execute(commandArguments.get("type").toString(), (LinkedHashMap) ((LinkedHashMap) ((LinkedHashMap) ((ArrayList<Object>) ConfigFileHandler.getFile(ConfigTypes.EVENTS).getConfig().get("Events")).get(0)).get("addSize")).get("values") );
+                                    EventHandler.handleEvent(EventHandler.PLATFORM_TWITCH, EventHandler.EVENT_SUB);
                                 }))
                 )
                 .withSubcommand(
@@ -54,14 +55,17 @@ public class DebugCommand {
                                 .executes(((commandSender, commandArguments) -> {
                                     ArrayList<Object> list = (ArrayList<Object>) ConfigFileHandler.getFile(ConfigTypes.EVENTS).getConfig().get("Events");
 
-                                    LinkedHashMap list2 = (LinkedHashMap) list.get(0);
+//                                    LinkedHashMap list2 = (LinkedHashMap) list.get(0);
+//
+//                                    Object l3 = list2.get("addSize");
+//
+//                                    commandSender.sendMessage(list2.getClass().toString());
+//                                    commandSender.sendMessage(list2.toString());
+//
+//                                    commandSender.sendMessage(l3.toString());
 
-                                    Object l3 = list2.get("addSize");
-
-                                    commandSender.sendMessage(list2.getClass().toString());
-                                    commandSender.sendMessage(list2.toString());
-
-                                    commandSender.sendMessage(l3.toString());
+                                    String params = (String) ((LinkedHashMap) ((ArrayList<Object>) list.get(0)).get(0)).get("values");
+                                    commandSender.sendMessage(params)   ;
                                 }))
                 );
     }

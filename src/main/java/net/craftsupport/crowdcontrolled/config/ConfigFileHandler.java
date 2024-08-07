@@ -8,7 +8,14 @@ import java.util.Map;
 public class ConfigFileHandler {
 
     private static Map<ConfigTypes, ConfigHandler> configs;
-    public ConfigFileHandler() { configs = new HashMap<>(); }
+
+    public ConfigFileHandler() {
+        configs = new HashMap<>();
+    }
+
+    public static ConfigHandler getFile(ConfigTypes type) {
+        return configs.get(type);
+    }
 
     public void loadFiles(CrowdControlled plugin) {
         registerFile(ConfigTypes.SETTINGS, new ConfigHandler(plugin, "config"));
@@ -20,11 +27,11 @@ public class ConfigFileHandler {
         Settings.setConfig(getFile(ConfigTypes.SETTINGS).getConfig());
     }
 
-    public static ConfigHandler getFile(ConfigTypes type) { return configs.get(type); }
-
     public void reloadFiles() {
         configs.values().forEach(ConfigHandler::reload);
     }
 
-    public void registerFile(ConfigTypes type, ConfigHandler handler) { configs.put(type, handler); }
+    public void registerFile(ConfigTypes type, ConfigHandler handler) {
+        configs.put(type, handler);
+    }
 }

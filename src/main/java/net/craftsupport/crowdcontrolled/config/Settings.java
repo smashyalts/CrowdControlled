@@ -6,7 +6,6 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Getter
@@ -22,7 +21,9 @@ public enum Settings {
     private static FileConfiguration config;
     private final String path;
 
-    Settings(String path) { this.path = path; }
+    Settings(String path) {
+        this.path = path;
+    }
 
     public List<String> getList() {
         return config.getStringList(this.path);

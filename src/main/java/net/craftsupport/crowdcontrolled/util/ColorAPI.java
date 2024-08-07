@@ -5,14 +5,11 @@ import net.craftsupport.crowdcontrolled.util.pattern.GradientPattern;
 import net.craftsupport.crowdcontrolled.util.pattern.MainPattern;
 import net.craftsupport.crowdcontrolled.util.pattern.StaticPattern;
 import net.md_5.bungee.api.ChatColor;
-import org.bukkit.Bukkit;
 
 import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class ColorAPI {
@@ -39,8 +36,6 @@ public class ColorAPI {
             .put(new Color(16733695), ChatColor.getByChar('d'))
             .put(new Color(16777045), ChatColor.getByChar('e'))
             .put(new Color(16777215), ChatColor.getByChar('f')).build();
-
-
 
 
     public static String process(String string) {

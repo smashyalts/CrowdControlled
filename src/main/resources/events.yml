@@ -11,7 +11,8 @@
 
 # Placeholders: see TODO WIKI LINK
 Events:
-  - addSize:
+  - 1:
+      name: "addSize"
       platform: ["twitch", "youtube", "kick"] # You can specify events to trigger for multiple platforms, if applicable.
       on: ["sub", "donate"] # See TODO WIKI LINK for the possible triggers
       broadcast: true

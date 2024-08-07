@@ -2,7 +2,6 @@ package net.craftsupport.crowdcontrolled.event.impl;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -31,7 +30,7 @@ public class PlayerEvents {
 
     public static void applyEffect(String type, int duration, int amplifier) {
         for (Player p : Bukkit.getOnlinePlayers()) {
-                p.addPotionEffect(new PotionEffect(PotionEffectType.getByName(type), duration, amplifier));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.getByName(type), duration, amplifier));
         }
     }
 }

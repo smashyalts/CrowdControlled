@@ -23,9 +23,13 @@ public enum Messages {
     private static FileConfiguration config;
     private final String path;
 
-    Messages(String path) { this.path = path; }
+    Messages(String path) {
+        this.path = path;
+    }
 
-    public String getString() { return config.getString(this.path); }
+    public String getString() {
+        return config.getString(this.path);
+    }
 
     public String get(Object... replacements) {
         Object value = config.get(this.path);

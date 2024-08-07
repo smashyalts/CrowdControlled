@@ -12,8 +12,13 @@ public class DataUtil {
         return Data.VERSION >= version;
     }
 
+    public static int getVersion() {
+        return Data.VERSION;
+    }
+
     private static final class Data {
         private static final int VERSION;
+        private static final boolean ISFLAT = supports(13);
 
         static {
             String version = Bukkit.getVersion();
@@ -22,11 +27,5 @@ public class DataUtil {
             if (matcher.find()) VERSION = Integer.parseInt(matcher.group(1));
             else throw new IllegalArgumentException("Failed to parse server version from: " + version);
         }
-
-        private static final boolean ISFLAT = supports(13);
-    }
-
-    public static int getVersion() {
-        return Data.VERSION;
     }
 }

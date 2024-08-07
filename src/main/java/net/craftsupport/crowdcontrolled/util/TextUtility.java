@@ -4,7 +4,9 @@ import java.util.List;
 
 public class TextUtility {
 
-    public static String color (final String string) { return ColorAPI.process(string); }
+    public static String color(final String string) {
+        return ColorAPI.process(string);
+    }
 
     public static String fromList(List<?> list) {
         if (list == null || list.isEmpty()) return null;

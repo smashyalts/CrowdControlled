@@ -54,5 +54,7 @@ public class ConfigHandler {
         }
     }
 
-    public void reload() { config = YamlConfiguration.loadConfiguration(file); }
+    public void reload() {
+        config = YamlConfiguration.loadConfiguration(file);
+    }
 }
