@@ -34,4 +34,3 @@ public class CrowdControlled extends JavaPlugin {
     }
 }
     // Schedule YouTube event checks
-    Bukkit.getScheduler().runTaskTimer(this, EventHandler::checkForYouTubeEvents, 0L, 1200L); // Every 60 seconds
