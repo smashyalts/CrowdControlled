@@ -76,3 +76,43 @@ public class EventHandler {
         }
     }
 }
+
+
+// Add YouTube specific event constants
+public static final String EVENT_YT_SUB = "yt_sub";
+public static final String EVENT_YT_SUPERCHAT = "yt_superchat";
+public static final String EVENT_YT_LIKE = "yt_like";
+public static final String EVENT_YT_COMMENT = "yt_comment";
+
+public static void handleYouTubeSubscription(String channelId, String username) {
+    Bukkit.broadcastMessage(username + " just subscribed on YouTube!");
+}
+
+public static void checkForYouTubeEvents() {
+    try {
+        List<Subscription> subscribers = YouTubeAPI.getRecentSubscribers("YOUR_CHANNEL_ID");
+        for (Subscription subscriber : subscribers) {
+            String username = subscriber.getSnippet().getTitle();
+            handleYouTubeSubscription("YOUR_CHANNEL_ID", username);
+        }
+    } catch (GeneralSecurityException | IOException e) {
+        e.printStackTrace();
+    }
+}
+
+public static void handleYouTubeSubscription(String channelId, String username) {
+    Bukkit.broadcastMessage(username + " just subscribed on YouTube!");
+    handleEvent(PLATFORM_YOUTUBE, EVENT_YT_SUB);  // Trigger the event system
+}
+
+public static void checkForYouTubeEvents() {
+    try {
+        List<Subscription> subscribers = YouTubeAPI.getRecentSubscribers("YOUR_CHANNEL_ID");
+        for (Subscription subscriber : subscribers) {
+            String username = subscriber.getSnippet().getTitle();
+            handleYouTubeSubscription("YOUR_CHANNEL_ID", username);
+        }
+    } catch (GeneralSecurityException | IOException e) {
+        e.printStackTrace();
+    }
+}

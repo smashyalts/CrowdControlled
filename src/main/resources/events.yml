@@ -41,3 +41,19 @@ Events:
 
         block: "AIR" # If the action is set to 'modify_block', what should the changed block be?
         offset: [1, -1, 0] # X, Y and Z offset of what block should be modified, or if set to 'teleport', what offset.
+
+Events:
+  - platform: ["youtube"]
+    event: ["yt_sub"]
+    action: "give_item"
+    values:
+      item: "diamond"
+      count: 1
+  - platform: ["youtube"]
+    event: ["yt_superchat"]
+    action: "apply_effect"
+    values:
+      effect: "speed"
+      duration: 60
+      amplifier: 1
+
